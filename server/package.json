@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "env-cmd -f ./config/prod.env ts-node src/index.ts",
+    "predev": "npm run build && ts-node src/index.ts",
+    "dev": "nodemon",
+    "get-schema": "graphql get-schema -p prisma --dotenv config/dev.env",
+    "test": "env-cmd -f ./config/test.env jest --watchAll"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src",
+      "tests"
+    ],
+    "exec": "npm run predev",
+    "ext": "ts, graphql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.11.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  }
+}
