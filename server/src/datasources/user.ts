@@ -76,7 +76,9 @@ export default class UserAPI extends DataSource {
             where: { userId }
         });
         return found && found.length
-            ? found.map(l => l.dataValues.launchId).filter(l => !!l)
+            ? 
+              //@ts-ignore
+              found.map(l => l.dataValues.launchId).filter(l => !!l)
             : [];
     }
 
