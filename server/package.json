@@ -4,41 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "tsconfig.json --fix",
-    "build": "tsc",
-    "prestart": "npm run build",
-    "start": "env-cmd -f ./config/prod.env ts-node src/index.ts",
-    "predev": "npm run build && ts-node src/index.ts",
-    "dev": "nodemon",
-    "get-schema": "graphql get-schema -p prisma --dotenv config/dev.env",
-    "test": "jest --watchAll"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      ".git",
-      "node_modules"
-    ],
-    "watch": [
-      "src",
-      "tests"
-    ],
-    "exec": "npm run predev",
-    "ext": "ts, graphql"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@graphql-codegen/cli": "^1.13.2",
-    "@graphql-codegen/typescript": "^1.13.2",
-    "@types/node": "^13.11.0",
-    "apollo-datasource-rest": "^0.8.1",
-    "apollo-server": "^2.12.0",
-    "graphql": "^15.0.0",
-    "isemail": "^3.2.0",
-    "nodemon": "^2.0.2",
-    "sequelize": "^5.21.6",
-    "ts-node": "^8.8.2",
-    "typescript": "^3.8.3"
-  }
+  "license": "ISC"
 }
