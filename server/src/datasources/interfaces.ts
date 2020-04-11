@@ -1,4 +1,9 @@
-import { FindOrCreateOptions, QueryInterface, QueryOptions, TruncateOptions } from "sequelize";
+import {
+    FindOrCreateOptions,
+    QueryInterface,
+    QueryOptions,
+    TruncateOptions
+} from "sequelize";
 
 export interface ILaunch {
     flight_number: number;
@@ -32,27 +37,4 @@ export interface ILaunchReducer {
         name: string;
         type: string;
     };
-}
-
-interface ISQLModel<Model> {
-    findOrCreate: (options: FindOrCreateOptions) => Model;
-    destroy: (options: FindOrCreateOptions) => Model;
-}
-
-export interface IUser {
-    id: number;
-    createdAt: Date;
-    updatedAt: Date;
-    email: string;
-    emailArg: any;
-    token: string;
-}
-
-export interface IStore {
-    users: ISQLModel<Array<IUser>>;
-}
-
-export interface IContext {
-    store: IStore
-    user: IUser;
 }

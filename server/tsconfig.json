@@ -19,7 +19,7 @@
     "include": [
         "types",
         "src/**/*.ts",
-        "tests/**/*.ts",
+        "tests/**/*.ts", "src/datasources/user.js",
     ],
     "exclude": [
         "node_modules",
