@@ -1,38 +1,45 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "prestart": "npm run build",
-    "start": "ts-node ./src/index.ts",
-    "dev": "nodemon"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      ".git",
-      "node_modules"
-    ],
-    "watch": [
-      "src",
-      "tests"
-    ],
-    "exec": "npm run start",
-    "ext": "ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/bluebird": "^3.5.30",
-    "@types/validator": "^13.0.0",
-    "apollo-datasource-rest": "^0.8.1",
-    "apollo-server": "^2.12.0",
-    "isemail": "^3.2.0",
-    "nodemon": "^2.0.2",
-    "sequelize": "^5.21.6",
-    "ts-node": "^8.8.2",
-    "typescript": "^3.8.3"
-  }
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "lint": "prettier --write .",
+        "build": "npm run lint && tsc",
+        "prestart": "npm run build",
+        "start": "ts-node ./src/index.ts",
+        "dev": "nodemon"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            ".git",
+            "node_modules"
+        ],
+        "watch": [
+            "src",
+            "tests"
+        ],
+        "exec": "npm run start",
+        "ext": "ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/bluebird": "^3.5.30",
+        "@types/validator": "^13.0.0",
+        "@typescript-eslint/eslint-plugin": "^2.27.0",
+        "@typescript-eslint/parser": "^2.27.0",
+        "apollo-datasource-rest": "^0.8.1",
+        "apollo-server": "^2.12.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "isemail": "^3.2.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^2.0.4",
+        "sequelize": "^5.21.6",
+        "ts-node": "^8.8.2",
+        "typescript": "^3.8.3"
+    }
 }

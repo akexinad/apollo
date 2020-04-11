@@ -1,10 +1,3 @@
-import {
-    FindOrCreateOptions,
-    QueryInterface,
-    QueryOptions,
-    TruncateOptions
-} from "sequelize";
-
 export interface ILaunch {
     flight_number: number;
     launch_date_unix: string;

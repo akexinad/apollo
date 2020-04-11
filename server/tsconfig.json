@@ -10,19 +10,10 @@
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {
-            "*": [
-                "node_modules/*"
-            ]
+            "*": ["node_modules/*"]
         },
         "typeRoots": ["./types", "node_modules/@types"]
     },
-    "include": [
-        "types",
-        "src/**/*.ts",
-        "tests/**/*.ts", "src/datasources/user.js",
-    ],
-    "exclude": [
-        "node_modules",
-        ".vscode",
-    ]
+    "include": ["types", "src/**/*.ts", "tests/**/*.ts", "src/datasources/user.js"],
+    "exclude": ["node_modules", ".vscode"]
 }

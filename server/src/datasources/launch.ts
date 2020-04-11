@@ -9,9 +9,7 @@ export default class LaunchAPI extends RESTDataSource {
 
     private async getAllLaunches() {
         const response = await this.get("launches");
-        return Array.isArray(response)
-            ? response.map(launch => this.launchReducer(launch))
-            : [];
+        return Array.isArray(response) ? response.map(launch => this.launchReducer(launch)) : [];
     }
 
     private launchReducer = (launch: ILaunch): ILaunchReducer => {
@@ -32,19 +30,13 @@ export default class LaunchAPI extends RESTDataSource {
         };
     };
 
-    private getLaunchById = async (
-        launchId: ILaunch["flight_number"]
-    ): Promise<ILaunchReducer> => {
+    private getLaunchById = async (launchId: ILaunch["flight_number"]): Promise<ILaunchReducer> => {
         const response = await this.get("launches", { flightNumber: launchId });
 
         return this.launchReducer(response[0]);
     };
 
-    private getLaunchesByIds = (
-        launchIds: Array<ILaunch["flight_number"]>
-    ): Promise<Array<ILaunchReducer>> => {
-        return Promise.all(
-            launchIds.map(launchId => this.getLaunchById(launchId))
-        );
+    private getLaunchesByIds = (launchIds: Array<ILaunch["flight_number"]>): Promise<Array<ILaunchReducer>> => {
+        return Promise.all(launchIds.map(launchId => this.getLaunchById(launchId)));
     };
 }
