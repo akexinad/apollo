@@ -16,7 +16,7 @@
         "typescript": "^3.7.5"
     },
     "scripts": {
-        "prestart": "prettier --write \"./**/*.{ts,tsx,json}\"",
+        "prestart": "prettier --write ./**/*.{ts,tsx,json}",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",

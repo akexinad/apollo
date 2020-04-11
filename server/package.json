@@ -4,8 +4,8 @@
     "description": "",
     "main": "dist/index.js",
     "scripts": {
-        "lint": "prettier --write .",
-        "build": "npm run lint && tsc",
+        "prebuild": "prettier --write .",
+        "build": "tsc",
         "prestart": "npm run build",
         "start": "ts-node ./src/index.ts",
         "dev": "nodemon"
