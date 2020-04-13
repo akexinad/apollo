@@ -7,10 +7,10 @@ export default class LaunchAPI extends RESTDataSource {
         this.baseURL = "https://api.spacexdata.com/v2/";
     }
 
-    private async getAllLaunches() {
+    private getAllLaunches = async (): Promise<Array<ILaunchReducer>> => {
         const response = await this.get("launches");
         return Array.isArray(response) ? response.map(launch => this.launchReducer(launch)) : [];
-    }
+    };
 
     private launchReducer = (launch: ILaunch): ILaunchReducer => {
         return {
