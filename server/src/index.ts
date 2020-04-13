@@ -1,6 +1,7 @@
 import { ApolloServer } from "apollo-server";
 
 import typeDefs from "./schema";
+import resolvers from "./resolvers";
 
 // @ts-ignore
 import { createStore } from "./utils.js";
@@ -13,6 +14,7 @@ const store = createStore();
 
 const server = new ApolloServer({
     typeDefs,
+    resolvers,
     dataSources: () => ({
         launchAPI: new LaunchAPI(),
         userAPI: new UserAPI(store)
