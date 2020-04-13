@@ -9,7 +9,7 @@ module.exports = {
     rules: {
         "prettier/prettier": "error",
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-        "@typescript-eslint/explicit-function-return-type": 1,
+        "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/naming-convention": [
             "error",
             {

@@ -14,6 +14,6 @@
         },
         "typeRoots": ["./types", "node_modules/@types"]
     },
-    "include": ["types", "src/**/*.ts", "tests/**/*.ts", "src/datasources/user.js"],
+    "include": ["types", "src/**/*.ts", "tests/**/*.ts", "src/datasources/user.js", "src/utils.js"],
     "exclude": ["node_modules", ".vscode"]
 }
